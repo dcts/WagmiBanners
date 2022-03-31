@@ -1,0 +1,30 @@
+.home-container {
+  margin: 0 auto;
+
+  h1.main-title {
+    margin-top: 65px;
+    text-align: center;
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: -1.6px;
+    line-height: 70px;
+  }
+
+  p.description {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    max-width: 800px;
+    line-height: 34px;
+    margin-bottom: 55px;
+
+    span {
+      opacity: 0.8;
+    }
+
+    strong {
+      opacity: 1;
+    }
+  }
+}

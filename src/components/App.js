@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./Home";
+import Home from "./home/_Home";
 import Error404 from "./Error404";
 
 // firebase SDK

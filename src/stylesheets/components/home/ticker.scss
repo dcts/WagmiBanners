@@ -1,0 +1,103 @@
+/**
+ * IMPORTANT
+ * to compute the correct  width and translate3d endposition
+ * its important to know the EFFECTIVE image size. E.g.
+ * => poweredBy is 1013x40
+ *    ...setting height of 22px resizes the image to 557.15 x 22
+ *    ...now you need to use -557.15 for translate3s endposition => translate3e(-557.13, 0, 0)
+ *    ...now you need to use 6*557.15=3342.9 as width for .sliding-background
+ * => howItWorks is 2939x79
+ *    ...setting height of 50px resizes the image to 1860.13 x 50
+ *    ...now you need to use -1860.13 for translate3s endposition => translate3e(-1860.13, 0, 0)
+ *    ...now you need to use 6*1860.13=11160.76 as width for .sliding-background
+ */
+
+.ticker-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.ticker-container.ticker1 {
+  .sliding-background-container {
+    // background-color: black;
+    // padding-top: 17px;
+    // padding-bottom: 17px;
+
+    .sliding-background {
+      background: url("../../../img/ticker1.png") repeat-x;
+      background-size: contain;
+      height: 125px;
+      width: 5679px;
+      /* The image width times 3 */
+      animation: slideTicker1 30s linear infinite;
+    }
+  }
+}
+
+@keyframes slideTicker1 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-1893px, 0, 0);
+    /* The image width */
+  }
+}
+
+.ticker-container.ticker2 {
+  .sliding-background-container {
+    // background-color: red;
+    padding-top: 17px;
+    padding-bottom: 17px;
+
+    .sliding-background {
+      background: url("../../../img/ticker2.png") repeat-x;
+      background-size: contain;
+      height: 126px;
+      width: 6819px;
+      /* The image width times 6 */
+      animation: slideTicker2 50s linear infinite;
+    }
+  }
+}
+
+@keyframes slideTicker2 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-2273px, 0, 0);
+    /* The image width */
+  }
+}
+
+// MEDIA QUERIES
+// make ticker smaller for phones (vw <=425)
+// howItWorks => height: 25px
+@media (max-width: 425px) {
+
+  // @keyframes slideTicker2 {
+  //   100% { transform: translate3d(-930.06px, 0, 0) !important }
+  // }
+  .ticker-container.ticker2 .sliding-background {
+    height: 25px !important;
+    width: 5580.38px !important;
+    animation: slideTicker2 40s linear infinite !important; // since the image is half the size, we need to double the animation length to have the same speed
+  }
+
+  .ticker-container.ticker1 .sliding-background-container {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  // NOT WORKING BUT I THINK ITS OK LIKE IT IS NOW
+  // .ticker-container.ticker1 .sliding-background {
+  //   // height: 15px !important;
+  //   // width: 2279.25px !important;
+  //   // animation: slideTicker1 14.66s linear infinite !important; // since the image is half the size, we need to double the animation length to have the same speed
+  // }
+}
