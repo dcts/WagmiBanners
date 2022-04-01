@@ -9,6 +9,12 @@ const Home = () => {
       </p>
       <Ticker tickerContent={"ticker1"}/>
       <Ticker tickerContent={"ticker2"}/>
+      <h2>Coming Soon</h2>
+      <p className="small">Join the waitlist to get early access</p>
+      <div className="form-container flex justify-center align-center">
+        <input placeholder="Email"/>
+        <button>Join Waitlist</button>
+      </div>
     </div>
   );
 };

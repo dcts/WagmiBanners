@@ -1,24 +1,38 @@
 .home-container {
   margin: 0 auto;
 
-  h1.main-title {
+  h1 {
+    font-size: 48px;
+    line-height: 52px;
     margin-top: 65px;
     text-align: center;
-    font-size: 48px;
     font-weight: bold;
     letter-spacing: -1.6px;
-    line-height: 52px;
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  p.description {
+  h2 {
+    font-size: 29px;
+    line-height: 32px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+
+  p.small {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 35px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 26px;
     margin: 0 auto;
     text-align: center;
-    font-size: 18px;
     font-weight: 300;
     max-width: 800px;
-    line-height: 26px;
     margin-bottom: 55px;
     padding-left: 20px;
     padding-right: 20px;
@@ -32,35 +46,85 @@
       opacity: 1;
     }
   }
+
+  input,
+  button {
+    all: unset;
+    border-radius: 8px;
+    padding: 10px 20px;
+  }
+  button {
+    background-color: $fellazgreen;
+    font-weight: bold;
+    margin-left: 8px;
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+  input {
+    padding: 10px 20px;
+    background-color: $white;
+    color: $black;
+  }
 }
 
 @media (max-width: 1000px) {
   .home-container {
-    h1.main-title {
+    h1 {
       font-size: 44px;
       line-height: 49px;
     }
-    p.description {
+    h2 {
+      font-size: 26px;
+      line-height: 29px;
+    }
+    p {
       font-size: 18px;
       line-height: 24px;
+    }
+    p.small {
+      font-size: 16px;
+      line-height: 21px;
     }
   }
 }
 @media (max-width: 500px) {
   .home-container {
-    p.description {
+    p {
       font-size: 16px;
       line-height: 22px;
+    }
+    p.small {
+      font-size: 15px;
+      line-height: 19px;
+    }
+    .form-container {
+      flex-direction: column;
+      max-width: 288px;
+      margin: 0 auto;
+    }
+    input, button {
+      text-align: center;
+      width: 100%;
+      margin: 0;
+      margin-left: 20px;
+      margin-right: 20px;
+      max-width: 70vw;
+    }
+    button {
+      margin-top: 12px;
     }
   }
 }
 @media (max-width: 375px) {
   .home-container {
-    h1.main-title {
+    h1 {
       font-size: 35px;
       line-height: 37px;
     }
-    p.description {
+    p {
       font-size: 15px;
       line-height: 21px;
     }
