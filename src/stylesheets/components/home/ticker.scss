@@ -21,83 +21,63 @@
 
 .ticker-container.ticker1 {
   .sliding-background-container {
-    // background-color: black;
-    // padding-top: 17px;
-    // padding-bottom: 17px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 
     .sliding-background {
-      background: url("../../../img/ticker1.png") repeat-x;
+      background: url("../../../img/ticker11.png") repeat-x;
       background-size: contain;
-      height: 125px;
-      width: 5679px;
-      /* The image width times 3 */
+      height: 100px; /* The image height */
+      width: 6188px; /* The image width times 4 */
       animation: slideTicker1 30s linear infinite;
     }
   }
 }
 
 @keyframes slideTicker1 {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-1893px, 0, 0);
-    /* The image width */
-  }
+  0% { transform: translate3d(0, 0, 0) }
+  100% { transform: translate3d(-1547px, 0, 0) } /* The image width multiplied with -1 */
+}
+@keyframes slideTicker1small {
+  0% { transform: translate3d(0, 0, 0) }
+  100% { transform: translate3d(-1160.25px, 0, 0) } /* The image width multiplied with -1 */
 }
 
 .ticker-container.ticker2 {
   .sliding-background-container {
-    // background-color: red;
-    padding-top: 17px;
-    padding-bottom: 17px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 
     .sliding-background {
-      background: url("../../../img/ticker2.png") repeat-x;
+      background: url("../../../img/ticker22.png") repeat-x;
       background-size: contain;
-      height: 126px;
-      width: 6819px;
-      /* The image width times 6 */
+      height: 100px; /* The height */
+      width: 7488px; /* The image width times 6 */
       animation: slideTicker2 50s linear infinite;
     }
   }
 }
 
 @keyframes slideTicker2 {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-2273px, 0, 0);
-    /* The image width */
-  }
+  0% { transform: translate3d(0, 0, 0) }
+  100% { transform: translate3d(-1872px, 0, 0) } /* The image width multiplied with -1 */
+}
+@keyframes slideTicker2small {
+  0% { transform: translate3d(0, 0, 0) }
+  100% { transform: translate3d(-1404px, 0, 0) } /* The image width multiplied with -1 */
 }
 
 // MEDIA QUERIES
-// make ticker smaller for phones (vw <=425)
-// howItWorks => height: 25px
-@media (max-width: 425px) {
-
-  // @keyframes slideTicker2 {
-  //   100% { transform: translate3d(-930.06px, 0, 0) !important }
-  // }
+// make ticker smaller for tablets (<1000) and phones (vw <500)
+@media (max-width: 1000px) {
   .ticker-container.ticker2 .sliding-background {
-    height: 25px !important;
-    width: 5580.38px !important;
-    animation: slideTicker2 40s linear infinite !important; // since the image is half the size, we need to double the animation length to have the same speed
+    height: 75px !important;
+    width: 7488px; /* The image width times 6 */
+    animation: slideTicker2small 40s linear infinite !important;
   }
-
-  .ticker-container.ticker1 .sliding-background-container {
-    padding-top: 12px;
-    padding-bottom: 12px;
+  .ticker-container.ticker1 .sliding-background {
+    height: 75px !important;
+    width: 4641px; /* The image width times 6 */
+    animation: slideTicker1small 40s linear infinite !important;
   }
-
-  // NOT WORKING BUT I THINK ITS OK LIKE IT IS NOW
-  // .ticker-container.ticker1 .sliding-background {
-  //   // height: 15px !important;
-  //   // width: 2279.25px !important;
-  //   // animation: slideTicker1 14.66s linear infinite !important; // since the image is half the size, we need to double the animation length to have the same speed
-  // }
 }
