@@ -20,12 +20,6 @@
     margin-bottom: 10px;
   }
 
-  p.small {
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 35px;
-  }
-
   p {
     font-size: 18px;
     line-height: 26px;
@@ -33,11 +27,17 @@
     text-align: center;
     font-weight: 300;
     max-width: 800px;
-    margin-bottom: 55px;
     padding-left: 20px;
     padding-right: 20px;
     max-width: 550px;
-
+    &.description {
+      margin-bottom: 55px;
+    }
+    &.small {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 35px;
+    }
     span {
       opacity: 0.8;
     }
@@ -68,6 +68,34 @@
     background-color: $white;
     color: $black;
   }
+  .promo-container-outer {
+    width: 400px;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    .promo-container {
+      margin-top: 55px;
+      display: flex;
+      justify-content: space-around;
+      .promo-text-element {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-size: 16px;
+          opacity: 0.9;
+        }
+        p.promo-text {
+          max-width: 80px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1000px) {
@@ -92,6 +120,9 @@
 }
 @media (max-width: 500px) {
   .home-container {
+    .promo-container-outer {
+      width: 300px;
+    }
     p {
       font-size: 16px;
       line-height: 22px;
@@ -111,7 +142,9 @@
       margin: 0;
       margin-left: 20px;
       margin-right: 20px;
-      max-width: 70vw;
+      max-width: 65vw;
+      font-size: 22px;
+      padding: 12px 22px;
     }
     button {
       margin-top: 12px;
@@ -127,6 +160,11 @@
     p {
       font-size: 15px;
       line-height: 21px;
+    }
+    input, button {
+      max-width: 60vw;
+      font-size: 19px;
+      padding: 10px 18px;
     }
   }
 }
