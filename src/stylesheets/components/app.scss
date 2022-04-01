@@ -20,6 +20,13 @@ body {
   background-size: 850px;
 }
 
+.flex-wrapper-for-footer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 // Basic Styling
 .flex {
   display: flex;

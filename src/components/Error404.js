@@ -1,6 +1,6 @@
 const Error404 = () => {
   return (
-    <h1>Page Not Found</h1>
+    <h1>Page Not Foundss</h1>
   );
 };
 

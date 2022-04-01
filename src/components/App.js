@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./home/_Home";
 import Error404 from "./Error404";
+import Footer from "./atoms/Footer";
 
 // firebase SDK
 import { initializeApp } from "firebase/app";
@@ -25,17 +26,22 @@ getAnalytics(app);
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/404">
-          <Error404 />
-        </Route>
-        <Route path="*">
-          <Error404 />
-        </Route>
-      </Switch>
+      <div className="flex-wrapper-for-footer">
+        <div className="non-footer-content">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/404">
+              <Error404 />
+            </Route>
+            <Route path="*">
+              <Error404 />
+            </Route>
+          </Switch>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 };
