@@ -1,1 +1,10 @@
-@import "./stylesheets/index.scss";
+@import "./stylesheets/config/colors.scss";
+@import "./stylesheets/config/fonts.scss";
+@import "./stylesheets/components/app.scss";
+@import "./stylesheets/components/error404.scss";
+
+@import "./stylesheets/components/home/_home.scss";
+@import "./stylesheets/components/home/ticker.scss";
+
+@import "./stylesheets/components/atoms/footer.scss";
+
