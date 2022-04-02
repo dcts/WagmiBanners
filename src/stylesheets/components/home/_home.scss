@@ -123,6 +123,9 @@
 }
 @media (max-width: 500px) {
   .home-container {
+    button:hover {
+      transform: none;
+    }
     .promo-container-outer {
       width: 300px;
     }
