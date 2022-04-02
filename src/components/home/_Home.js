@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Ticker from "./Ticker";
 
 const Home = () => {
+  const [submitting, setSubmitting] = useState(false);
   const promoText = [
     "forever free",
     "no wallet needed",
@@ -16,10 +18,10 @@ const Home = () => {
       <Ticker tickerContent={"ticker2"}/>
       <h2>Coming Soon</h2>
       <p className="small">Join the waitlist to get early access</p>
-      <div className="form-container flex justify-center align-center">
+      <form className="form-container flex justify-center align-center">
         <input placeholder="Email"/>
         <button>Join Waitlist</button>
-      </div>
+      </form>
       <div className="promo-container-outer">
         <div className="promo-container">
           { promoText.map((text, indx) => {
