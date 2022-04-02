@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Ticker from "./Ticker";
+import axios from "axios";
 
 const Home = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -8,6 +9,47 @@ const Home = () => {
     "no wallet needed",
     "easy",
   ]
+  const [loadingDots, setLoadingDots] = useState(3);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLoadingDots((loadingDots) => (loadingDots + 1) % 4);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const inputEl = useRef(null);
+
+  const submitEmail = async () => {
+    setSubmitting(true);
+    const email = normalizeEmail(inputEl.current.value);
+    if (!emailValid(email)) {
+      alert("🚧 Ooops, this email is invalid. Please try again.");
+      setSubmitting(false);
+    }
+
+    const response = await axios.get(`https://us-central1-shillcoin.cloudfunctions.net/wagmiAddWaitlist?token=H85biDGkSrm3kzi&email=${email}`);
+    if (response.data.status === "ok") {
+      setSubmitting(false);
+      inputEl.current.value = "";
+      alert(`🙏 Awesome, you are on the Waitlist! (email: ${email})`);
+    }
+  }
+
+  const normalizeEmail = (email) => {
+    return email.toLowerCase().trim();
+  }
+
+  const emailValid = (email) => {
+    const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    return regEx.test(String(email).toLowerCase());
+  }
+
+  const submitForm = (event) => {
+    event.preventDefault();
+    submitEmail();
+  }
+
   return (
     <div className="home-container">
       <h1 className="main-title">Create Beautiful <br />NFT Banners</h1>
@@ -18,9 +60,15 @@ const Home = () => {
       <Ticker tickerContent={"ticker2"}/>
       <h2>Coming Soon</h2>
       <p className="small">Join the waitlist to get early access</p>
-      <form className="form-container flex justify-center align-center">
-        <input placeholder="Email"/>
-        <button>Join Waitlist</button>
+      <form onSubmit={submitForm} className="form-container flex justify-center align-center">
+        <input ref={inputEl} placeholder="Email"/>
+        <button onClick={submitForm}>
+          { submitting ? (
+            <>Loading{"...".slice(0, loadingDots)}</>
+          ) : (
+            <>Join Waitlist</>
+          )}
+        </button>
       </form>
       <div className="promo-container-outer">
         <div className="promo-container">
