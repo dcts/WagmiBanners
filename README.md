@@ -1,6 +1,6 @@
 # Create Beautiful NFT banners
 
-Wagmibanners helps you auto-generate beautiful banners to showcase your Deadfellaz, Coolcats or Loosers NFTs on twitter.
+Wagmibanners helps you auto-generate beautiful banners to showcase your Deadfellaz, Coolcats or Loser Club NFTs on twitter.
 
 Design by [RoweRenders](https://twitter.com/rowerenders).
 Coded by [dcts](https://twitter.com/dcts_dev).
