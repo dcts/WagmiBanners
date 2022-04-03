@@ -54,7 +54,13 @@ const Home = () => {
     <div className="home-container">
       <h1 className="main-title">Create Beautiful <br />NFT Banners</h1>
       <p className="description">
-        <span>Wagmibanners helps you </span><strong>auto-generate</strong> <span>beautiful banners to showcase your</span> <strong>Deadfellaz</strong><span>,</span> <strong>Coolcats</strong> <span>or</span> <strong>Loser Club</strong> <span>NFTs on twitter.</span>
+        <span>Wagmibanners helps you</span>
+        <strong> auto-generate </strong>
+        <span>beautiful banners to showcase your </span>
+        <a className="link-to-opensea remove-all-link-styling" href="https://opensea.io/collection/deadfellaz" rel="noreferer" target="_blank"><strong>Deadfellaz</strong></a>
+        <span> and </span>
+        <a className="link-to-opensea remove-all-link-styling" href="https://opensea.io/collection/deadfrenz-collection" rel="noreferer" target="_blank"><strong>Deadfrenz</strong></a>
+         <span> NFTs on twitter.</span>
       </p>
       <Ticker tickerContent={"ticker1"}/>
       <Ticker tickerContent={"ticker2"}/>
