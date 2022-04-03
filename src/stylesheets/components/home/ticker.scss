@@ -25,10 +25,10 @@
     padding-bottom: 4px;
 
     .sliding-background {
-      background: url("../../../img/ticker11.png") repeat-x;
+      background: url("../../../img/ticker1111.png") repeat-x;
       background-size: contain;
       height: 100px; /* The image height */
-      width: 6188px; /* The image width times 4 */
+      width: 6224px; /* The image width times 4 */
       animation: slideTicker1 30s linear infinite;
     }
   }
@@ -36,11 +36,11 @@
 
 @keyframes slideTicker1 {
   0% { transform: translate3d(0, 0, 0) }
-  100% { transform: translate3d(-1547px, 0, 0) } /* The image width multiplied with -1 */
+  100% { transform: translate3d(-1556px, 0, 0) } /* The image width multiplied with -1 */
 }
 @keyframes slideTicker1small {
   0% { transform: translate3d(0, 0, 0) }
-  100% { transform: translate3d(-1160.25px, 0, 0) } /* The image width multiplied with -1 */
+  100% { transform: translate3d(-1167px, 0, 0) } /* The image width * 0.75  */
 }
 
 .ticker-container.ticker2 {
@@ -49,7 +49,7 @@
     padding-bottom: 4px;
 
     .sliding-background {
-      background: url("../../../img/ticker22.png") repeat-x;
+      background: url("../../../img/ticker2222.png") repeat-x;
       background-size: contain;
       height: 100px; /* The height */
       width: 7488px; /* The image width times 6 */
