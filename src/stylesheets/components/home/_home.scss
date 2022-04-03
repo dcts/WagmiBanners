@@ -11,12 +11,15 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+  .link-to-opensea:hover {
+    color: $fellazgreen;
+  }
 
   h2 {
     font-size: 29px;
     line-height: 32px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 90px;
     margin-bottom: 10px;
   }
 
@@ -52,6 +55,7 @@
     all: unset;
     border-radius: 8px;
     padding: 10px 20px;
+    font-size: 18px;
   }
   button {
     background-color: $fellazgreen;
@@ -110,6 +114,7 @@
     h2 {
       font-size: 26px;
       line-height: 29px;
+      margin-top: 50px;
     }
     p {
       font-size: 18px;
